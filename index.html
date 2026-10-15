@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HEIC to JPG Converter - Free, Fast & Private (No Upload)</title>
+<meta name="description" content="Convert HEIC photos from iPhone to JPG for free. Convert multiple files at once. Your photos never leave your device.">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Arial,sans-serif;background:#f5f7fb;color:#1f2937;line-height:1.6}
+/* top bar */
+.topbar{position:sticky;top:0;z-index:50;background:#fff;display:flex;align-items:center;gap:14px;padding:10px 14px;box-shadow:0 1px 6px #0002}
+.burger{background:none;border:0;padding:6px;cursor:pointer;display:flex;flex-direction:column;gap:5px}
+.burger span{display:block;width:26px;height:3px;background:#1f2937;border-radius:2px}
+.logo{font-size:24px;font-weight:800;color:#111;text-decoration:none;display:flex;align-items:center;gap:6px}
+.logo b{color:#2563eb}
+.logo i{font-style:normal;font-size:22px}
+/* menu */
+.menu{position:fixed;top:0;left:0;height:100%;width:78%;max-width:300px;background:#fff;z-index:100;transform:translateX(-100%);transition:transform .25s;box-shadow:2px 0 12px #0004;padding:18px}
+.menu.open{transform:none}
+.menu .mtitle{font-size:20px;font-weight:800;margin-bottom:14px}
+.menu a{display:block;padding:14px 4px;border-bottom:1px solid #e5e7eb;color:#1f2937;text-decoration:none;font-size:17px}
+.menu a:active{background:#eff6ff}
+.shade{position:fixed;inset:0;background:#0006;z-index:90;display:none}
+.shade.open{display:block}
+/* page */
+header.hero{background:#2563eb;color:#fff;padding:22px 16px;text-align:center}
+h1{margin:0 0 6px;font-size:26px}
+header.hero p{margin:0;opacity:.9}
+main{max-width:720px;margin:auto;padding:14px}
+.card{background:#fff;border-radius:14px;padding:18px;box-shadow:0 1px 8px #0001;margin-bottom:14px}
+.drop{border:2px dashed #93c5fd;border-radius:12px;padding:30px 12px;text-align:center;background:#eff6ff}
+.btn{background:#2563eb;color:#fff;border:0;padding:13px 20px;border-radius:10px;font-size:16px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.sec{background:#e5e7eb;color:#111}
+.btn:disabled{opacity:.5}
+input[type=file]{display:none}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}
+input[type=range]{flex:1;min-width:140px}
+.item{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #e5e7eb;font-size:14px}
+.item span{word-break:break-all}
+.err{color:#dc2626}
+.ad{margin:14px 0;text-align:center;overflow:hidden}
+.ad:empty{display:none}
+h2{font-size:20px;margin-top:0}
+details{border-bottom:1px solid #e5e7eb;padding:10px 0}
+summary{font-weight:600;cursor:pointer}
+footer{text-align:center;padding:22px;font-size:13px;color:#64748b}
+footer a{color:#2563eb;margin:0 6px}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+<button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+<a class="logo" href="index.html"><img src="logo.png" alt="HEIC to JPG logo" style="height:34px;width:auto" onerror="this.style.display='none'">HEIC to <b>JPG</b></a>
+</div>
+
+<div class="shade" id="shade"></div>
+<nav class="menu" id="menu">
+<div class="mtitle">Menu</div>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="terms.html">Terms</a>
+</nav>
+
+<header class="hero">
+<h1>HEIC to JPG Converter</h1>
+<p>Free • Fast • Private — photos never leave your device</p>
+</header>
+
+<main>
+<div class="ad"><!-- AD CODE 1: paste ad code here --></div>
+
+<div class="card">
+<label class="drop" id="drop" style="display:block;cursor:pointer">
+<div style="font-size:40px">📷</div>
+<b>Tap to choose HEIC photos</b><br><small>or drag and drop here. Multiple files supported.</small>
+<input type="file" id="file" accept=".heic,.heif,image/heic,image/heif" multiple>
+</label>
+<div class="row">
+<label>JPG quality: <b id="qv">90</b>%</label>
+<input type="range" id="q" min="50" max="100" value="90">
+</div>
+<div class="row">
+<button class="btn" id="go" disabled>Convert to JPG</button>
+<button class="btn sec" id="all" style="display:none">Download all</button>
+</div>
+<div id="list"></div>
+</div>
+
+<div class="ad"><!-- AD CODE: paste ad code here --></div>
+
+<div class="card">
+<h2>How to convert HEIC to JPG</h2>
+<ol>
+<li>Tap the box above and choose your HEIC photos.</li>
+<li>Pick the JPG quality (90% is a great balance).</li>
+<li>Tap <b>Convert to JPG</b>.</li>
+<li>Download each photo, or tap <b>Download all</b>.</li>
+</ol>
+<p>Everything runs inside your browser. Your photos are never uploaded to any server, so your pictures stay private.</p>
+</div>
+
+<div class="card">
+<h2>What is a HEIC file?</h2>
+<p>HEIC (High Efficiency Image Container) is the default photo format on iPhones and iPads. It keeps good quality at a smaller file size, but many Windows PCs, Android phones, websites and apps cannot open it. Converting HEIC to JPG makes your photos work almost everywhere.</p>
+</div>
+
+<div class="card">
+<h2>FAQ</h2>
+<details><summary>Is this HEIC to JPG converter free?</summary><p>Yes. It is completely free, with no sign-up and no limits on the number of photos.</p></details>
+<details><summary>Are my photos uploaded anywhere?</summary><p>No. The conversion happens in your browser on your own device.</p></details>
+<details><summary>Can I convert many photos at once?</summary><p>Yes. Select several files at the same time and convert them in one go.</p></details>
+<details><summary>Will the quality drop?</summary><p>At 90% quality or above, the difference is very hard to notice. Use 100% for the best quality.</p></details>
+<details><summary>Why does my iPhone save photos as HEIC?</summary><p>HEIC saves storage space. You can change this in iPhone Settings → Camera → Formats → Most Compatible.</p></details>
+</div>
+
+<div class="ad"><!-- AD CODE: paste ad code here --></div>
+</main>
+
+<footer>
+<a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a>
+<p>&copy; 2026 heic-to-jpg</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/heic2any/0.0.4/heic2any.min.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+
+/* menu open / close */
+function toggleMenu(open){
+  $('menu').classList.toggle('open',open);
+  $('shade').classList.toggle('open',open);
+}
+$('burger').onclick=()=>toggleMenu(!$('menu').classList.contains('open'));
+$('shade').onclick=()=>toggleMenu(false);
+
+/* converter */
+let files=[],results=[];
+$('q').oninput=()=>$('qv').textContent=$('q').value;
+
+function pick(fs){
+  files=[...fs].filter(f=>/\.(heic|heif)$/i.test(f.name)||/heic|heif/i.test(f.type));
+  results=[];$('all').style.display='none';
+  $('list').innerHTML=files.map((f,i)=>`<div class="item" id="r${i}"><span>${f.name}</span><small>Ready</small></div>`).join('')
+    ||'<p class="err">Please choose .heic or .heif files.</p>';
+  $('go').disabled=!files.length;
+}
+$('file').onchange=e=>pick(e.target.files);
+$('drop').ondragover=e=>e.preventDefault();
+$('drop').ondrop=e=>{e.preventDefault();pick(e.dataTransfer.files)};
+
+$('go').onclick=async()=>{
+  $('go').disabled=true;results=[];
+  const q=$('q').value/100;
+  for(let i=0;i<files.length;i++){
+    const row=$('r'+i);
+    row.lastElementChild.textContent='Converting...';
+    try{
+      let b=await heic2any({blob:files[i],toType:'image/jpeg',quality:q});
+      if(Array.isArray(b))b=b[0];
+      const url=URL.createObjectURL(b);
+      const name=files[i].name.replace(/\.(heic|heif)$/i,'')+'.jpg';
+      results.push({url,name});
+      row.lastElementChild.outerHTML=`<a class="btn" href="${url}" download="${name}">Download</a>`;
+    }catch(err){
+      row.lastElementChild.outerHTML='<small class="err">Failed</small>';
+    }
+  }
+  $('go').disabled=false;
+  if(results.length>1)$('all').style.display='inline-block';
+};
+
+$('all').onclick=()=>{
+  results.forEach((r,i)=>setTimeout(()=>{
+    const a=document.createElement('a');a.href=r.url;a.download=r.name;
+    document.body.appendChild(a);a.click();a.remove();
+  },i*400));
+};
+</script>
+</body>
+</html>
