@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us | HEIC to JPG</title>
+<meta name="description" content="Learn about HEIC to JPG, a free and private online tool that converts iPhone HEIC photos to JPG in your browser.">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Arial,sans-serif;background:#f5f7fb;color:#1f2937;line-height:1.7}
+.topbar{position:sticky;top:0;z-index:50;background:#fff;display:flex;align-items:center;gap:14px;padding:10px 14px;box-shadow:0 1px 6px #0002}
+.burger{background:none;border:0;padding:6px;cursor:pointer;display:flex;flex-direction:column;gap:5px}
+.burger span{display:block;width:26px;height:3px;background:#1f2937;border-radius:2px}
+.logo{font-size:24px;font-weight:800;color:#111;text-decoration:none;display:flex;align-items:center;gap:6px}
+.logo b{color:#2563eb}
+.menu{position:fixed;top:0;left:0;height:100%;width:78%;max-width:300px;background:#fff;z-index:100;transform:translateX(-100%);transition:transform .25s;box-shadow:2px 0 12px #0004;padding:18px}
+.menu.open{transform:none}
+.menu .mtitle{font-size:20px;font-weight:800;margin-bottom:14px}
+.menu a{display:block;padding:14px 4px;border-bottom:1px solid #e5e7eb;color:#1f2937;text-decoration:none;font-size:17px}
+.shade{position:fixed;inset:0;background:#0006;z-index:90;display:none}
+.shade.open{display:block}
+header.hero{background:#2563eb;color:#fff;padding:22px 16px;text-align:center}
+header.hero h1{margin:0;font-size:26px}
+main{max-width:720px;margin:auto;padding:14px}
+.card{background:#fff;border-radius:14px;padding:20px;box-shadow:0 1px 8px #0001;margin-bottom:14px}
+h2{font-size:20px;margin:22px 0 8px}
+h2:first-child{margin-top:0}
+p,li{font-size:16px}
+a{color:#2563eb}
+.btn{background:#2563eb;color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;display:inline-block;margin-top:6px}
+.updated{color:#64748b;font-size:14px}
+footer{text-align:center;padding:22px;font-size:13px;color:#64748b}
+footer a{margin:0 6px}
+</style>
+</head>
+<body>
+<div class="topbar">
+<button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+<a class="logo" href="index.html"><img src="logo.png" alt="HEIC to JPG logo" style="height:34px;width:auto" onerror="this.style.display='none'">HEIC to <b>JPG</b></a>
+</div>
+<div class="shade" id="shade"></div>
+<nav class="menu" id="menu">
+<div class="mtitle">Menu</div>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="terms.html">Terms</a>
+</nav>
+<header class="hero"><h1>About HEIC to JPG</h1></header>
+<main>
+<div class="card">
+
+<h2>Who we are</h2>
+<p>HEIC to JPG is a free online tool that helps people open and share photos taken on iPhones and iPads. Modern iPhones save pictures in the HEIC format, which many Windows PCs, Android phones, websites and apps cannot open. Our converter turns those photos into standard JPG files that work almost everywhere.</p>
+
+<h2>Our mission</h2>
+<p>We believe a simple task should stay simple. You should be able to convert a photo in a few taps, without creating an account, installing software, or handing your pictures to a stranger's server. That is why we built this tool to be fast, free and private.</p>
+
+<h2>What makes us different</h2>
+<ul>
+<li><b>Private by design:</b> The conversion runs inside your own browser. Your photos are not uploaded to our servers.</li>
+<li><b>Free to use:</b> No sign-up, no watermark and no limit on the number of photos.</li>
+<li><b>Batch conversion:</b> Select many HEIC files at once and convert them in one go.</li>
+<li><b>Adjustable quality:</b> Choose the JPG quality that suits you, from smaller files to maximum quality.</li>
+<li><b>Works on any device:</b> Use it on a phone, tablet or computer with a modern web browser.</li>
+</ul>
+
+<h2>How we keep the site free</h2>
+<p>This website may display advertising to cover hosting and development costs. Ads never change how the converter works, and we do not have access to your photos.</p>
+
+<h2>Get in touch</h2>
+<p>We welcome questions, feedback and bug reports. Please visit our <a href="contact.html">Contact page</a> and tell us how we can improve.</p>
+
+</div>
+</main>
+<footer>
+<a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a>
+<p>&copy; 2026 heic-to-jpg</p>
+</footer>
+<script>
+const $=id=>document.getElementById(id);
+function t(o){$('menu').classList.toggle('open',o);$('shade').classList.toggle('open',o)}
+$('burger').onclick=()=>t(!$('menu').classList.contains('open'));
+$('shade').onclick=()=>t(false);
+</script>
+</body>
+</html>
