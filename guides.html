@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HEIC Guides and Tutorials | HEIC to JPG</title>
+<meta name="description" content="Helpful guides about HEIC photos: what they are, how to convert them to JPG, and how to open them on iPhone, Windows and Android.">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Arial,sans-serif;background:#f5f7fb;color:#1f2937;line-height:1.7}
+.topbar{position:sticky;top:0;z-index:50;background:#fff;display:flex;align-items:center;gap:14px;padding:10px 14px;box-shadow:0 1px 6px #0002}
+.burger{background:none;border:0;padding:6px;cursor:pointer;display:flex;flex-direction:column;gap:5px}
+.burger span{display:block;width:26px;height:3px;background:#1f2937;border-radius:2px}
+.logo{font-size:24px;font-weight:800;color:#111;text-decoration:none;display:flex;align-items:center;gap:6px}
+.logo b{color:#2563eb}
+.menu{position:fixed;top:0;left:0;height:100%;width:78%;max-width:300px;background:#fff;z-index:100;transform:translateX(-100%);transition:transform .25s;box-shadow:2px 0 12px #0004;padding:18px}
+.menu.open{transform:none}
+.menu .mtitle{font-size:20px;font-weight:800;margin-bottom:14px}
+.menu a{display:block;padding:14px 4px;border-bottom:1px solid #e5e7eb;color:#1f2937;text-decoration:none;font-size:17px}
+.shade{position:fixed;inset:0;background:#0006;z-index:90;display:none}
+.shade.open{display:block}
+header.hero{background:#2563eb;color:#fff;padding:22px 16px;text-align:center}
+header.hero h1{margin:0;font-size:26px}
+main{max-width:720px;margin:auto;padding:14px}
+.card{background:#fff;border-radius:14px;padding:20px;box-shadow:0 1px 8px #0001;margin-bottom:14px}
+h2{font-size:20px;margin:22px 0 8px}
+h2:first-child{margin-top:0}
+p,li{font-size:16px}
+a{color:#2563eb}
+.btn{background:#2563eb;color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;display:inline-block;margin-top:6px}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:10px 0}th,td{border:1px solid #e5e7eb;padding:8px;text-align:left;vertical-align:top}th{background:#eff6ff}
+.related a{display:block;padding:10px 0;border-bottom:1px solid #e5e7eb;text-decoration:none}
+.updated{color:#64748b;font-size:14px}
+footer{text-align:center;padding:22px;font-size:13px;color:#64748b}
+footer a{margin:0 6px}
+</style>
+</head>
+<body>
+<div class="topbar">
+<button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+<a class="logo" href="index.html"><img src="logo.png" alt="HEIC to JPG logo" style="height:34px;width:auto" onerror="this.style.display='none'">HEIC to <b>JPG</b></a>
+</div>
+<div class="shade" id="shade"></div>
+<nav class="menu" id="menu">
+<div class="mtitle">Menu</div>
+<a href="index.html">Home</a>
+<a href="guides.html">Guides</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="terms.html">Terms</a>
+</nav>
+<header class="hero"><h1>HEIC Guides</h1></header>
+<main>
+<div class="card">
+<h2><a href="what-is-a-heic-file.html">What Is a HEIC File?</a></h2>
+<p>Understand the HEIC format, why iPhones use it, and what it means for your photos.</p>
+<h2><a href="convert-heic-to-jpg-on-iphone.html">How to Convert HEIC to JPG on iPhone</a></h2>
+<p>Simple step-by-step ways to turn iPhone HEIC photos into JPG files.</p>
+<h2><a href="open-heic-files-on-windows.html">How to Open HEIC Files on Windows</a></h2>
+<p>Fix the "cannot open" problem on your PC with extensions or a quick conversion.</p>
+<h2><a href="open-heic-files-on-android.html">How to Open HEIC Files on Android</a></h2>
+<p>See how to view HEIC photos on Android and what to do on older phones.</p>
+<h2><a href="heic-vs-jpg.html">HEIC vs JPG: Which Is Better?</a></h2>
+<p>A clear comparison of file size, quality and compatibility to help you choose.</p>
+<p><a class="btn" href="index.html">Convert HEIC to JPG now</a></p>
+</div>
+</main>
+<footer>
+<a href="guides.html">Guides</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a>
+<p>&copy; 2026 heic-to-jpg</p>
+</footer>
+<script>
+const $=id=>document.getElementById(id);
+function t(o){$('menu').classList.toggle('open',o);$('shade').classList.toggle('open',o)}
+$('burger').onclick=()=>t(!$('menu').classList.contains('open'));
+$('shade').onclick=()=>t(false);
+</script>
+</body>
+</html>
